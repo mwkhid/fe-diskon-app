@@ -5,7 +5,7 @@
         </v-main>
 
         <!-- Global Snackbar -->
-        <v-snackbar v-model=" appStore.snackbar.show " :color=" appStore.snackbar.color " timeout="3000">
+        <v-snackbar v-model=" appStore.snackbar.show " :color=" appStore.snackbar.color " timeout="3000" location="top">
             {{ appStore.snackbar.text }}
 
             <template v-slot:actions>
