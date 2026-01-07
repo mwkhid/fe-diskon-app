@@ -64,10 +64,33 @@
         </div>
       </v-card-text>
 
-      <v-divider></v-divider>
+      <!-- <v-divider></v-divider> -->
 
-      <v-card-actions class="pa-4 bg-grey-lighten-5">
+      <v-card-actions class="pa-4">
+        <div v-if="isEdit" class="d-flex justify-space-between w-100 align-center">
+             <v-btn
+              color="error"
+              variant="text"
+              class="text-capitalize px-4"
+              height="40"
+              rounded="pill"
+              @click="$emit('delete')"
+            >
+              Hapus
+            </v-btn>
+            <v-btn
+              color="primary"
+              variant="flat"
+              @click="save"
+              class="text-capitalize px-8"
+              rounded="pill"
+              height="40"
+            >
+              Simpan
+            </v-btn>
+        </div>
         <v-btn
+          v-else
           color="primary"
           variant="flat"
           @click="save"
@@ -95,7 +118,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['update:modelValue', 'save'])
+const emit = defineEmits(['update:modelValue', 'save', 'delete'])
 const appStore = useAppStore()
 
 const internalShow = computed({

@@ -25,7 +25,7 @@
                         variant="outlined"
                         color="error"
                         rounded="pill"
-                        class="text-capitalize px-6 mr-3"
+                        class="text-capitalize px-6 mr-2"
                         height="40"
                         @click="clearSelection"
                         style="border-color: #EF5350 !important; color: #EF5350 !important"
@@ -136,6 +136,7 @@
       v-model="showDialog" 
       :edited-item="selectedItem" 
       @save="handleSave"
+      @delete="handleDialogDelete"
     />
 
     <DeleteDialog 
@@ -235,5 +236,10 @@ async function handleConfirmDelete() {
         await appStore.deleteBulkDiscounts(selected.value)
         clearSelection()
     }
+}
+
+function handleDialogDelete() {
+    showDialog.value = false
+    showDelete.value = true
 }
 </script>

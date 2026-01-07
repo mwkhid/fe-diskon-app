@@ -1,23 +1,23 @@
 <template>
-  <v-dialog v-model="internalShow" max-width="400px">
+  <v-dialog v-model="internalShow" max-width="500px">
     <v-card class="rounded-xl pt-6 pb-4">
-      <v-card-title class="text-h6 font-weight-bold text-center">
+      <v-card-title class="text-h6 font-weight-bold ml-2">
         Hapus Diskon
       </v-card-title>
       
-      <v-card-text class="text-center px-6">
-        <p v-if="isBulk" class="mb-4 text-body-2">
+      <v-card-text class="px-6">
+        <p v-if="isBulk" class="text-body-3">
             Apakah Anda yakin ingin menghapus diskon yang dipilih?
         </p>
-        <p v-else class="mb-4 text-body-2">
+        <p v-else class="text-body-3">
             Apakah anda yakin ingin menghapus diskon <strong>{{ itemName }}</strong>?
         </p>
-        <div class="d-flex align-center justify-center bg-red-lighten-5 py-2 px-3 rounded text-caption text-error">
-             <span class="mr-2">●</span> Diskon yang dihapus tidak bisa dikembalikan lagi
+        <div class="d-flex py-2 px-3 rounded text-caption">
+            <span class="mr-2">●</span> Diskon yang dihapus tidak bisa dikembalikan lagi
         </div>
       </v-card-text>
 
-      <v-card-actions class="justify-center pt-2">
+      <v-card-actions class="justify-end pt-2 pr-6">
         <v-btn
           color="error"
           variant="outlined"
@@ -31,7 +31,7 @@
           color="error"
           variant="flat"
           @click="confirm"
-          class="text-capitalize px-8 ml-2"
+          class="text-capitalize px-8"
           rounded="pill"
         >
           Hapus
