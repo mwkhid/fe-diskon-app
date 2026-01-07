@@ -13,9 +13,6 @@ export const useAppStore = defineStore('app', {
             text: '',
             color: 'success',
         },
-        // API Configuration
-        // Users must enter their crudcrud ID or full URL
-        // Defaulting to empty to force user input
         apiId: '',
     }),
 

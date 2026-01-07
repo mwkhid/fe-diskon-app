@@ -106,6 +106,4 @@ const internalSelected = computed({
 .table-border-bottom :deep(tbody tr:not(:last-child) td) {
     border-bottom: 1px solid #EEEEEE !important;
 }
-
-/* Hide default VDataTable headers since we provided custom template */
 </style>

@@ -41,8 +41,6 @@
                 </div>
             </v-card-text>
 
-            <!-- <v-divider></v-divider> -->
-
             <v-card-actions class="pa-4">
                 <div v-if="isEdit" class="d-flex justify-space-between w-100 align-center">
                     <v-btn color="error" variant="text" class="text-capitalize px-4" height="40" rounded="pill"
@@ -88,7 +86,7 @@ const isEdit = computed(() => !!props.editedItem)
 const form = ref({
     name: '',
     value: '',
-    unit: '%' // default
+    unit: '%'
 })
 
 const errors = ref({
@@ -98,7 +96,7 @@ const errors = ref({
 
 watch(() => props.modelValue, (val) => {
     if (val) {
-        errors.value = { name: '', value: '' } // Reset errors
+        errors.value = { name: '', value: '' }
         if (props.editedItem) {
             form.value = { ...props.editedItem }
         } else {
@@ -133,12 +131,10 @@ function save() {
     }
 
     // Validate Duplicate Name
-    // Check if name exists in store.discounts (case insensitive?)
-    // Exclude current item if editing
     if (form.value.name) {
         const duplicate = appStore.discounts.find(d =>
             d.name.toLowerCase() === form.value.name.toLowerCase() &&
-            d._id !== form.value._id // Assuming _id exists
+            d._id !== form.value._id
         )
 
         if (duplicate) {
@@ -162,7 +158,6 @@ function save() {
 :deep(.v-field__prefix),
 :deep(.v-field__suffix) {
     color: #9E9E9E !important;
-    /* Placeholder grey */
     opacity: 1;
 }
 </style>
