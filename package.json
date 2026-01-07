@@ -1,0 +1,24 @@
+{
+  "name": "fe-diskon-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "axios": "^1.13.2",
+    "pinia": "^3.0.4",
+    "sass": "^1.97.2",
+    "vue": "^3.5.24",
+    "vuetify": "^3.11.6",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.2.4"
+  }
+}
